@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Form example_2</title>
+         <!-- bootstrap  -->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+         <!-- css -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="form-background">
+             <div class="container h-100">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-xl-6 col-lg-6 col-md-10 col-sm-10">
+                        <div class="form py-5 px-5">
+                              <h2 class="mb-5">Регистрация</h2>
+                              <form name="myForm">
+                                    <input type="text" name="fullName" placeholder="ФИО" class="w-100 pl-3 py-2 mb-3">
+                                    <input type="email" name="mail" placeholder="E-mail" class="w-100 pl-3 py-2 mb-3">
+                                    <input type="number" name="" placeholder="Возраст" class="w-100 pl-3 py-2 mb-3">
+                                    <input type="text" name="phone" placeholder="Phone" class="w-100 pl-3 py-2 mb-3">
+                                    <input type="number" placeholder="Вес" class="w-100 pl-3 py-2 mb-3">
+                                    <div class="d-flex">
+                                        <div class="mr-3">
+                                            <label for="male" class="mr-1">Женщина</label>
+                                            <input type="radio" name="gender" value="male"><br>
+                                        </div>
+                                        <div>
+                                            <label for="female" class="mr-1">Мужчина</label>
+                                            <input type="radio" name="gender" value="female"><br>
+                                        </div>
+                                    </div>
+                                    <input type="date" placeholder="Дата начала ведения дневника" class="w-100 pl-3 py-2 mb-3">
+                                    <div class=" text-right mt-3">
+                                        <button class="btn1 px-3 py-2 mb-2">Регистрация</button>
+                                    </div>
+                                    <div>
+                                        <span id="numloc"></span><br/>
+                                        <span id="checkmail"></span>
+                                    </div>
+                                    
+                              </form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+                let btn = document.querySelector(".btn1");
+                btn.addEventListener("click", function(e){
+                    e.preventDefault();
+                    let mail = document.myForm.mail.value;
+                    let reg = /\S+@\S+\.\S+/;
+                    if (mail.match(reg)) {
+                        document.getElementById("checkmail").innerHTML = "";
+                    }else {
+                        document.getElementById("checkmail").innerHTML = "Please enter valid Email";
+                    }
+
+
+                    let phoneNumber = document.myForm.phone.value;
+                    if (isNaN(phoneNumber)){
+                        document.getElementById("numloc").innerHTML="Enter Numeric value only";
+                    } else {
+                        document.getElementById("numloc").innerHTML="";
+                    }
+
+                })
+        </script>
+
+    </body>
+</html>

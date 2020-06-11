@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form-background {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, #fff780, #f29a00);
+}
+.form {
+    background-color: white;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+h2 {
+    font-size: 40px;
+    color: #545454;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px #a3a3a3;
+}
+form input {
+    border: 0;
+    border-bottom: 2px solid #c9c9c9;
+}
+form input:focus{
+    outline: 0;
+    border-bottom: 2px solid #ff872b;
+}
+
+.btn1{
+    background-color: #ff872b;
+    border: 1px solid #ff872b;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+.btn1:hover{
+    background-color: white;
+    border: 1px solid #ff872b;
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.btn1:focus{
+    outline: 0;
+}
+#numloc,
+#checkmail {
+    color:red;
+}
+
+@media (min-width: 320px)  and (max-width: 576px) {
+    h2 {
+        font-size: 30px;
+        color: #424242;
+    }
+}
